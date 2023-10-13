@@ -23,3 +23,5 @@ for item in lista_palavras:
     numero_caracteres = len(palavra_atual)
     if(letras_quantidade == numero_caracteres) and (verifica in palavra_da_lista_separada):
         print(palavra_atual)
+
+#teste
