@@ -1,4 +1,4 @@
-# Adivinha a palavra
+# Formação de palavra
 Projeto para praticar alguns conceitos do Python.
 
 O arquivo `contruir_palavra.py` foi o início do projeto, primeira versão do código.
