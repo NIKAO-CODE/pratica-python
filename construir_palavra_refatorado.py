@@ -8,10 +8,9 @@ for linha in arquivo:
 arquivo.close()
 
 letras = input("Digite até 46 letras: ")
-letras_quantidade = len(letras)
 
 for palavra in lista_palavras:
-    if (len(palavra) == letras_quantidade):
+    if (len(palavra) == len(letras)):
         letras_palavra = list(palavra)
         letras_disponiveis = list(letras)
         formavel = True
