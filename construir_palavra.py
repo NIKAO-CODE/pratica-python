@@ -1,27 +1,31 @@
-# Criar um programa que recebe letras aleatórias e adivinha a palavra
+arquivo = open("palavras.txt", "r", encoding="utf8")
+lista_palavras = []
 
-lista_palavras = ['uva']
-verifica = []
+for linha in arquivo:
+    linha = linha.strip().lower()
+    lista_palavras.append(linha)
+
+arquivo.close()
+
 palavra_da_lista_separada = []
 
 letras = input("Digite até 46 letras: ")
-letras_quantidade = int(len(letras))
+letras_quantidade = len(letras)
 
-for l in letras:
-    verifica.append(l)
-print(verifica, "separando letras")
-
+verifica = [l for l in letras]
 
 for palavra in lista_palavras:
     caracteres_item = [letra for letra in palavra]
     palavra_da_lista_separada.append(caracteres_item)
-print(palavra_da_lista_separada, "separando letras da palavra da lista")
-
 
 for item in lista_palavras:
     palavra_atual = item
     numero_caracteres = len(palavra_atual)
-    if(letras_quantidade == numero_caracteres) and (verifica in palavra_da_lista_separada):
-        print(palavra_atual)
-
-#teste
+    if letras_quantidade == numero_caracteres:
+        formavel = True
+        for letra in palavra_da_lista_separada[0]:
+            if letra not in verifica:
+                formavel = False
+                break
+        if formavel:
+            print(palavra_atual)
