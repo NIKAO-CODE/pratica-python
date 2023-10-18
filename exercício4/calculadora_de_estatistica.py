@@ -13,7 +13,6 @@ def imprime_mensagens_inicias():
     print("*" * 50)
     print("Calculadora de Estatística")
     print("*" * 50)
-
     print("""O que você deseja fazer?
         [1] Média das notas.
         [2] Nota mais alta.
