@@ -1,9 +1,11 @@
 def calculadora():
-   
-    imprime_mensagens_inicias()
-    escolha, entrada = captura_escolha_do_usuario()
-    lista_notas = cria_lista_de_notas(entrada)
-    realiza_as_condiconais(escolha, lista_notas)
+    try:
+        imprime_mensagens_inicias()
+        escolha, entrada = captura_escolha_do_usuario()
+        lista_notas = cria_lista_de_notas(entrada)
+        realiza_as_condiconais(escolha, lista_notas)
+    except:
+        print("Aconteceu um erro. Certifique-se de fornecer uma escolha válida e notas válidas.")
 
 
 # funções responsáveis pelo funcionamento da função calculadora
@@ -21,16 +23,18 @@ def imprime_mensagens_inicias():
 
 
 def captura_escolha_do_usuario():
-    
-    while True:
-        escolha = int(input("Digite a sua escolha: "))
-        if (escolha < 1 or escolha > 5):
-            print("Opção inválida!")
-            continue
-        else:
-            entrada = input("Digite as notas separado por espaço: (somente números) ")
+    try:
+        while True:
+            escolha = int(input("Digite a sua escolha: "))
+            if (escolha < 1 or escolha > 5):
+                print("Opção inválida!")
+                continue
+            else:
+                entrada = input("Digite as notas separado por espaço: (somente números) ")
 
-        return escolha, entrada
+            return escolha, entrada
+    except:
+        print("Aconteceu um erro. Certifique-se de fornecer uma escolha válida e notas válidas.")
 
 
 def cria_lista_de_notas(entrada):
